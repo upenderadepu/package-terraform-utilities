@@ -1,14 +1,14 @@
 terraform {
-  # This module is now only being tested with Terraform 0.13.x. However, to make upgrading easier, we are setting
+  # This module is now only being tested with Terraform 0.15.x. However, to make upgrading easier, we are setting
   # 0.12.26 as the minimum version, as that version added support for required_providers with source URLs, making it
-  # forwards compatible with 0.13.x code.
+  # forwards compatible with 0.15.x code.
   required_version = ">= 0.12.26"
 }
 
 module "executable" {
   # When using these modules in your own templates, you will need to use a Git URL with a ref attribute that pins you
   # to a specific version of the modules, such as the following example:
-  # source = "git::git@github.com:gruntwork-io/package-terraform-utilities.git//modules/executable-dependency?ref=v1.0.8"
+  # source = "git::git@github.com:gruntwork-io/terraform-aws-utilities.git//modules/executable-dependency?ref=v1.0.8"
   source = "../../modules/executable-dependency"
 
   executable     = var.executable
